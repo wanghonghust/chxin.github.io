@@ -1,6 +1,6 @@
 ---
 layout: post
-title:What IS  Github 
+title: What IS  Github 
 author: CHxin
 date: 2016-8-26
 categories: blog
