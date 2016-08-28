@@ -37,7 +37,6 @@ timezone: Asia/Wuhan
 
 # Defaults for posts
 defaults:
-  -
     scope: 
     path: ""
     type: "posts"
