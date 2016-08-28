@@ -1,17 +1,17 @@
 ---
 layout: post
-title: Github
+title:What IS  Github 
 author: CHxin
 date: 2016-8-26
 categories: blog
-tags: [Geek,Try]
+tags: [Geek,Tools]
 description: 
 ---
 Github的基本功能：
 
 
 
-转自知乎：http://www.zhihu.com/question/20070065
+转自知乎：http://www.zhihu.com/question/20070065  最近很喜欢这种文风啊
 
 
 Repository：你和我一起做“知乎首页”，“知乎首页”就是Repository，即项目，命名“SoCool”或者”未来武器T2级425mm磁轨炮“之类
