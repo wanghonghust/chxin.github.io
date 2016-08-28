@@ -10,7 +10,7 @@ header-img: "img/green.jpg"
 </center>
 
 
-我是CHxin，记录生活，锤炼语言。践行时间：2016年08月28日至今。
+我是CHxin，记录生活，锤炼语言。践行时间：2016年08月28日至今。  
 用最简短的话语，解释自己的看法，力求表达出清晰的思路。
 
 现在尝试 **还原性记录** 。
@@ -28,9 +28,13 @@ header-img: "img/green.jpg"
 ### 关注：
 
 - [元认知](http://www.mesule.com/)
+
 - 写作
+
 - Python
+
 - [阳志平](http://www.yangzhiping.com/)
+
 - [ZoomQuiet](http://blog.zoomquiet.io/)
 
 ### 代表作：
@@ -55,8 +59,8 @@ header-img: "img/green.jpg"
 ### 联系
 
 - [博客：www.chengxinhust.xyz](www.chengxinhust.xyz)
-- [微博@CnFeat](http://weibo.com/5807670169)
-- [知乎@陈素封](http://www.zhihu.com/people/chengxin-hust)
+- [微博@CHxin](http://weibo.com/5807670169)
+- [知乎@紫曦空逸](http://www.zhihu.com/people/chengxin-hust)
 
 <center>
     <p><img src="http://i173.photobucket.com/albums/w63/cnfeat/2015-08-29-2_zpsqj7po8eo.png" align="center"></p>
