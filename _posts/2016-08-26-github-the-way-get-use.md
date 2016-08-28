@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Github
+author: CHxin
 date: 2016-8-26
 categories: blog
 tags: [Geek,Try]
