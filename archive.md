@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 title: "Archive"
 description: "你看到的，是我练习的所有文章"
