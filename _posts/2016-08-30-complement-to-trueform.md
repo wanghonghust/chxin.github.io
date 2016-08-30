@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: 由补码求原码的三种方法
 author: CHxin
