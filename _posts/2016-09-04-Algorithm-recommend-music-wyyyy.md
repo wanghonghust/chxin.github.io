@@ -15,13 +15,13 @@ description: 人工+智能推荐；newcomer的推荐；冗余歌曲；
 
 &emsp;&emsp;网易云音乐关于个性化推荐这块在公司外部介绍的比较少，但应该推荐的算法和机制和大部分的音乐素材的公司做的类似。以item为核心的协同过滤（CF），通过打分机制来推荐最适合的歌曲。  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/1.jpg" width="400" height="400" />
-<img src="http://chengxinhust.xyz/img/20160904/3.jpg" width="400" height="400" />
+<img src="http://chengxinhust.xyz/img/20160904/1.jpg"  />
+<img src="http://chengxinhust.xyz/img/20160904/3.jpg"  />
 </div>  
 
 &emsp;&emsp;印象中早期网易云音乐还可以将自己听的歌曲分享到微信朋友圈等，通过跳转关联到的账户ID识别出朋友关系。这个想法的确很赞，包括我第一次听《一路向北》的时候也是一个朋友推荐给我的，这首歌不仅是个人喜欢的风格，再加上有朋友推荐所以留下很好的印象。但是很可惜，现在朋友圈不能分享了。微博还可以分享，只是现在微博的数据很多水分。  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/5.jpg" width="400" height="400" />
+<img src="http://chengxinhust.xyz/img/20160904/5.jpg" />
 </div>  
 
 &emsp;&emsp;现在主流的方式都是人工+智能推荐，人工的方式就不过多介绍，费时费力。出不了几张有限的专辑。现在主流都是通过机器学习的方式，通过同类人类的偏好给相似的人群推荐他们都喜欢的歌曲。也有根据以歌的item推荐相似的歌曲，但体验就是听来听去就是那个风格，很快就乏味了。  
@@ -55,7 +55,7 @@ C君，拉黑了《最炫民族风》，而《晴天》《Hero》都收藏了。
 假设我们对新来的D君，只知道她喜欢最炫民族风，那么问题来了，给她推荐啥好咯？  
 
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/7.jpg" width="400" height="400" alt="如图，推荐《晴天》！"/>
+<img src="http://chengxinhust.xyz/img/20160904/7.jpg" alt="如图，推荐《晴天》！"/>
 </div>
 如图，推荐《晴天》！  
 以及nick lee分享的一种矩阵计算得分的方式：  
@@ -66,55 +66,55 @@ C君，拉黑了《最炫民族风》，而《晴天》《Hero》都收藏了。
 
 一，用户-潜在因子矩阵Q，表示不同的用户对于不用元素的偏好程度，1代表很喜欢，0代表不喜欢。比如下面这样：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/9.jpg" width="400" height="400" />
+<img src="http://chengxinhust.xyz/img/20160904/9.jpg" />
 </div>  
   
 二，潜在因子-音乐矩阵P，表示每种音乐含有各种元素的成分，比如下表中，音乐A是一个偏小清新的音乐，含有小清新这个Latent Factor的成分是0.9，重口味的成分是0.1，优雅的成分是0.2……  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/11.jpg" width="400" height="400" />
+<img src="http://chengxinhust.xyz/img/20160904/11.jpg" />
 </div>  
 
 利用这两个矩阵，我们能得出张三对音乐A的喜欢程度是：张三对小清新的偏好*音乐A含有小清新的成分+对重口味的偏好*音乐A含有重口味的成分+对优雅的偏好*音乐A含有优雅的成分+……  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/13.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/13.jpg" />
 </div>  
 
 即：0.6*0.9+0.8*0.1+0.1*0.2+0.1*0.4+0.7*0=0.69  
 每个用户对每首歌都这样计算可以得到不同用户对不同歌曲的评分矩阵。（注，这里的破浪线表示的是估计的评分，接下来我们还会用到不带波浪线的R表示实际的评分）：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/15.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/15.jpg" />
 </div>  
 
 因此我们队张三推荐四首歌中得分最高的B，对李四推荐得分最高的C，王五推荐B。  
 如果用矩阵表示即为：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/17.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/17.jpg" />
 </div>  
 
 下面问题来了，这个潜在因子（latent factor）是怎么得到的呢？  
 
 由于面对海量的让用户自己给音乐分类并告诉我们自己的偏好系数显然是不现实的，事实上我们能获得的数据只有用户行为数据。我们沿用@邰原朗的量化标准：单曲循环=5, 分享=4, 收藏=3, 主动播放=2 , 听完=1, 跳过=-2 , 拉黑=-5，在分析时能获得的实际评分矩阵R，也就是输入矩阵大概是这个样子：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/19.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/19.jpg" />
 </div>  
 
 事实上这是个非常非常稀疏的矩阵，因为大部分用户只听过全部音乐中很少一部分。如何利用这个矩阵去找潜在因子呢？这里主要应用到的是矩阵的UV分解。也就是将上面的评分矩阵分解为两个低维度的矩阵，用Q和P两个矩阵的乘积去估计实际的评分矩阵，而且我们希望估计的评分矩阵事实上这是个非常非常稀疏的矩阵，因为大部分用户只听过全部音乐中很少一部分。如何利用这个矩阵去找潜在因子呢？这里主要应用到的是矩阵的UV分解。也就是将上面的评分矩阵分解为两个低维度的矩阵，用Q和P两个矩阵的乘积去估计实际的评分矩阵，而且我们希望估计的评分矩阵  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/21.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/21.jpg" />
 </div>  
 
 和实际的评分矩阵不要相差太多，也就是求解下面的目标函数：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/23.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/23.jpg" />
 </div>  
 这里涉及到最优化理论，在实际应用中，往往还要在后面加上2范数的罚项，然后利用梯度下降法就可以求得这P,Q两个矩阵的估计值。这里我们就不展开说了。例如我们上面给出的那个例子可以分解成为这样两个矩阵：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/25.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/25.jpg" />
 </div>  
 
 这两个矩阵相乘就可以得到估计的得分矩阵：这两个矩阵相乘就可以得到估计的得分矩阵：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/27.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/27.jpg" />
 </div>  
 
 将用户已经听过的音乐剔除后，选择分数最高音乐的推荐给用户即可（红体字）。将用户已经听过的音乐剔除后，选择分数最高音乐的推荐给用户即可（红体字）。  
@@ -122,11 +122,11 @@ C君，拉黑了《最炫民族风》，而《晴天》《Hero》都收藏了。
 在这个例子里面用户7和用户8有强的相似性：  
 从推荐的结果来看，正好推荐的是对方评分较高的音乐：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/29.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/29.jpg" />
 </div>  
 从推荐的结果来看，正好推荐的是对方评分较高的音乐：  
 <div align=left>
-<img src="http://chengxinhust.xyz/img/20160904/31.jpg" width="400" height="400"/>
+<img src="http://chengxinhust.xyz/img/20160904/31.jpg" />
 </div>  
 
 本质上应该都类似，都是从Amazon那条路子下来的。但是这种方式也会遇到问题：  
